@@ -17,12 +17,8 @@
  color: var(--accent);
 }
 
-*::-webkit-scrollbar {
-  display: none;
-}
-
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
