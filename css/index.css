@@ -108,6 +108,12 @@ button.text__copyIP:hover, button.text__copyIP:focus {
     color: var(--accent);
 }
 
+@media (max-width: 460px) {
+  img.big__portrait {
+    width: 90%;
+    top: 53%;
+  }
+}
 
 /** INFO Section Styles */
 
@@ -150,6 +156,14 @@ button.text__copyIP:hover, button.text__copyIP:focus {
     justify-content: space-between;
     text-align: left;
     width: 10rem;
+}
+
+.owner-name:hover span.tag {
+  color: inherit;
+}
+
+span.tag {
+ color: gray;
 }
 
 .copy-owner-tag {

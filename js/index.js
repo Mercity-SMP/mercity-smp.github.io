@@ -95,5 +95,5 @@ copyOwner1.addEventListener("click", () => {
 
 copyOwner2.addEventListener("click", () => {
     copyText("Telly#3114");
-    notify("Copied tag of first owner", "info");
+    notify("Copied tag of second owner", "info");
 });
