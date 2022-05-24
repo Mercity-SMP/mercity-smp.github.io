@@ -7,3 +7,7 @@ Domain Name: freenom
 Discord Image: discord.com
 
 Minecraft Image: minecraft.net
+
+Icons: fontawesome
+
+Font(s): Fontsquirrel [ Abel ]

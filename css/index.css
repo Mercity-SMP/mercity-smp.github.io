@@ -1,5 +1,10 @@
 /** IMPORTING FONTS */
 
+:root {
+  --accent: #161f2d;
+  --font: 'Abel';
+}
+
 @font-face {
     font-family: 'Abel';
     src: url(/assets/fonts/abel-regular.ttf);
@@ -7,13 +12,9 @@
 
 /** ESSENTIALS */
 
-:root {
-    --accent: #161f2d;
-}
-
 *::selection {
- background-color: #7dd5f8;
- color: black;
+ background-color: #a7e6ff;
+ color: var(--accent);
 }
 
 html {
@@ -21,13 +22,17 @@ html {
 }
 
 body {
-    font-family: 'Abel';
+    font-family: var(--font);
     margin: 0;
 }
 
 div, div *, span, h1, h2, h3, h4, h5, h6, abbr, button, button *, p, a {
-    font-family: 'Abel';
+    font-family: var(--font);
     font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
 }
 
 p {
@@ -238,16 +243,6 @@ span.tag {
  font-size: 1.2rem;
 }
 
-.contact-mail {
-  position: absolute;
-  top: 300%;
-  padding: 2rem;
-  width: 100%;
-  height: 100%;
-  transition: opacity 250ms ease;
-  background-color: var(--a-clr);
-}
-
 .contact__flex {
   display: flex;
   align-items: center;
@@ -284,7 +279,7 @@ span.tag {
   resize: none;
   height: 10rem !important;
   padding: 1rem 2rem 1rem 1rem;
-  border: solid 3px var(--a-clr-dark);
+  border: solid 3px var(--accent);
   outline: none;
 }
 
@@ -333,11 +328,29 @@ span.tag {
   outline-offset: 4px;
   transition: 100ms ease;
   transition-property: outline-offset, filter;
+  cursor: pointer;
 }
 
 .footer .favicon:hover, .footer .favicon:focus {
   outline-offset: 2px;
   filter: brightness(1.2);
+}
+
+.footer__text {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  margin-top: 15rem;
+}
+
+.copyright-text {
+  font-size: 1.4rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  color: white;
+  text-align: center;
 }
 
 /** Notification Styles */

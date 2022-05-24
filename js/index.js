@@ -65,17 +65,17 @@ function notify(message, type, context) {
    */
   
 function copyText(text) {
-    try {
-      navigator.clipboard.writeText(text)
-    } catch(e) {
-      notify("There was an error copying the text, please check your clipboard settings.", "error");
-    }
+    navigator.clipboard.writeText(text);
 }
 
 const copyTextBtn = document.querySelector(".text__copyIP");
 copyTextBtn.addEventListener("click", () => {
-    copyText("testing.mercitysmp.cf");
-    notify("Successfully copied the server's IP!", "success");
+    try {
+      copyText("testing.mercitysmp.cf");
+      notify("Successfully copied the server's IP!", "success");
+    } catch(e) {
+      notify("There was an error copying the text, please check your clipboard settings.", "error");
+    }
 });
 
 const clickImage = document.querySelector(".big__portrait");
@@ -93,11 +93,24 @@ const copyOwner1 = document.querySelector(".copy-owner-tag.n1");
 const copyOwner2 = document.querySelector(".copy-owner-tag.n2");
 
 copyOwner1.addEventListener("click", () => {
-    copyText("Satindar#2927");
-    notify("Copied tag of first owner", "info");
+    try {
+      copyText("Satindar#2927");
+      notify("Copied tag of first owner", "info");
+    } catch(e) {
+      notify("There was an error copying the text, please check your clipboard settings.", "error");
+    }
 });
 
 copyOwner2.addEventListener("click", () => {
-    copyText("Telly#3114");
-    notify("Copied tag of second owner", "info");
+    try {
+      copyText("Telly#3114");
+      notify("Copied tag of second owner", "info");
+    } catch(e) {
+      notify("There was an error copying the text, please check your clipboard settings.", "error");
+    }
+});
+
+const fImg = document.querySelector(".favicon");
+fImg.addEventListener("click", () => {
+  window.location.href = "#hero";
 });
