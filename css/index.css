@@ -17,6 +17,10 @@
  color: var(--accent);
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -37,6 +41,16 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
  font-size: 1.2rem;
+}
+
+a {
+ color: white;
+ text-decoration: underline 2px white;
+}
+
+a:hover {
+ color: #a7e6ff;
+ text-decoration: none;
 }
 
 .fa-item {
