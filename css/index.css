@@ -1,0 +1,307 @@
+/** IMPORTING FONTS */
+
+@font-face {
+    font-family: 'Abel';
+    src: url(/assets/fonts/abel-regular.ttf);
+}
+
+/** ESSENTIALS */
+
+:root {
+    --accent: #161f2d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Abel';
+    margin: 0;
+}
+
+div, div *, span, h1, h2, h3, h4, h5, h6, abbr, button, button *, p, a {
+    font-family: 'Abel';
+    font-weight: 500;
+}
+
+p {
+ font-size: 1.2rem;
+}
+
+.fa-item {
+    opacity: 0;
+    transform: translateX(-10%);
+    transition: 500ms ease;
+    transition-property: opacity, transform;
+}
+
+.fa-item.scroll {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.section {
+ height: 100vh;
+ width: 100vw;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.section-btns {
+    font-size: 1.2rem;
+    background-color: transparent;
+    padding: .5em 1em;
+    cursor: pointer;
+    transition: 250ms ease;
+    border-radius: .2em;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%) !important;
+}
+
+/** Starting Section Styles */
+
+.section__intro {
+    background-color: var(--accent);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.start__header {
+    color: white;
+}
+
+img.big__portrait {
+    height: 25rem;
+    aspect-ratio: 1;
+    border-radius: 1rem;
+    outline: white solid 2px;
+    outline-offset: .5rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+    cursor: pointer;
+    transition: 100ms ease;
+    transition-property: filter, outline-offset;
+}
+
+img.big__portrait:hover, img.big__portrait:focus {
+    outline-offset: 2px;
+    filter: brightness(1.2);
+}
+
+button.text__copyIP {
+    background-color: transparent;
+    border: solid 1px white;
+    color: white;
+}
+
+button.text__copyIP:hover, button.text__copyIP:focus {
+    background-color: white;
+    color: var(--accent);
+}
+
+
+/** INFO Section Styles */
+
+.section__info {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+}
+
+.info__header {
+    color: var(--accent);
+}
+
+.info__aboutUs {
+    text-align: center;
+    font-size: 125%;
+}
+
+.text__joinWL {
+    background-color: transparent;
+    border: solid 1px var(--accent);
+    color: var(--accent);
+}
+
+.text__joinWL:hover, .text__joinWL:focus {
+    background-color: var(--accent);
+    color: white;
+}
+
+.more-text {
+ margin-left: 1.5rem;
+}
+
+.owners-list {
+    font-size: 1.2rem;
+}
+
+.owners-list li {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    width: 10rem;
+}
+
+.copy-owner-tag {
+    cursor: pointer;
+    padding: .2rem .55rem;
+    background-color: transparent;
+    border: solid 1px var(--accent);
+    border-radius: .1rem;
+    transition: 250ms ease;
+    color: var(--accent);
+    transition-property: background-color, color;
+}
+
+.copy-owner-tag:hover, .copy-owner-tag:focus {
+    background-color: var(--accent);
+    color: white;
+}
+
+.discord-icon {
+ border-radius: 50%;
+ position: absolute;
+ top: 60%;
+ transform: translateY(-50%) rotate(15deg);
+ right: 10%;
+ height: 20rem;
+ aspect-ratio: 1;
+}
+
+.mc-icon {
+ border-radius: 50%;
+ position: absolute;
+ top: 60%;
+ transform: translateY(-50%) rotate(-15deg);
+ right: calc(10% + calc(20rem / 2));
+ height: 20rem;
+ aspect-ratio: 1;
+}
+
+@media (max-height: 590px) {
+    .imgs {
+        transform: scale(0);
+    }
+}
+
+@media (max-width: 1190px) {
+    .imgs {
+        transform: scale(0);
+    }
+}
+
+/** Notification Styles */
+
+#notification-area {
+  position: fixed;
+  bottom: 1rem;
+  right: 10px;
+  width: 250px;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#notification-area .notification {
+  position: relative;
+  padding: 0.875rem 1.75rem;
+  background: var(--accent);
+  color: #f5f5f5;
+  font-size: 1rem;
+  border-radius: 0.5rem 0.5rem .5rem 0;
+  margin: 0.5rem 0;
+  opacity: 0;
+  left: 2rem;
+  animation: showNotification 500ms forwards alternate;
+  text-align: left;
+}
+
+.notification.contextMenu {
+  width: 30ch;
+  left: -4.25rem !important;
+  animation: showNotification 500ms forwards alternate;
+}
+
+.notif.notif-timer {
+  position: absolute;
+  bottom: 0;
+  border-radius: .5rem;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .25);
+
+  animation: notf-timer 5000ms ease-in-out forwards;
+}
+
+@keyframes showNotification {
+  to {
+    opacity: 1;
+    left: 0px;
+  }
+}
+
+@keyframes notf-timer {
+  to {
+    width: 0;
+  }
+}
+
+#notification-area .notification.success {
+  background: #49cc7b;
+}
+#notification-area .notification.error {
+  background: rgb(190, 51, 0);
+}
+#notification-area .notification.info {
+  background: #00acee;
+}
+  
+  .notification:not(.notification.info)::selection {
+    background: var(--accent);
+  }
+  
+  .notification.info::selection {
+    background: var(--accent);
+}
+
+.cross {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  height: 1rem;
+  width: 1rem;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.cross span:first-of-type {
+  position: absolute;
+  top: .5rem;
+  right: 0;
+  height: .15rem;
+  width: 100%;
+  background-color: white;
+  transform: rotate(45deg);
+}
+
+.cross span:last-of-type {
+  position: absolute;
+  top: .5rem;
+  right: 0;
+  height: .15rem;
+  width: 100%;
+  background-color: white;
+  transform: rotate(-45deg);
+}
