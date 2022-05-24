@@ -1,0 +1,9 @@
+Github Pages: hosting
+
+DNS: Cloudfare
+
+Domain Name: freenom
+
+Discord Image: discord.com
+
+Minecraft Image: minecraft.net

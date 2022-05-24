@@ -65,7 +65,11 @@ function notify(message, type, context) {
    */
   
 function copyText(text) {
-    navigator.clipboard.writeText(text);
+    try {
+      navigator.clipboard.writeText(text)
+    } catch(e) {
+      notify("There was an error copying the text, please check your clipboard settings.", "error");
+    }
 }
 
 const copyTextBtn = document.querySelector(".text__copyIP");

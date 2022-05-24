@@ -297,19 +297,48 @@ span.tag {
   cursor: pointer;
   outline: none;
   border-radius: .2rem;
-  transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1);
-  transition-property: box-shadow;
+  transition: 500ms ease;
+  transition-property: color, background-color;
   box-shadow: inset 0 0 0 0 white;
 }
 
 .contact-form .form__submit:hover, .contact-form .form__submit:focus {
- transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.5);
- transition-property: box-shadow;
- box-shadow: inset calc(var(--initial-width) + 20px) 0 0 0 white;
+ background-color: white;
  color: var(--accent);
- border: solid 2px var(--accent);
 }
 
+/** Footer Styles */
+
+.footer {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 300vh;
+  background-color: #121417;
+}
+
+.footer__header {
+  color: white;
+}
+
+.footer .favicon {
+  height: 20%;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 6.3rem;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: .3rem;
+  outline: white solid 2px;
+  outline-offset: 4px;
+  transition: 100ms ease;
+  transition-property: outline-offset, filter;
+}
+
+.footer .favicon:hover, .footer .favicon:focus {
+  outline-offset: 2px;
+  filter: brightness(1.2);
+}
 
 /** Notification Styles */
 
