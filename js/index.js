@@ -91,6 +91,7 @@ waitListBtn.addEventListener("click", () => {
 
 const copyOwner1 = document.querySelector(".copy-owner-tag.n1");
 const copyOwner2 = document.querySelector(".copy-owner-tag.n2");
+const copyOwner3 = document.querySelector(".copy-owner-tag.n3");
 
 copyOwner1.addEventListener("click", () => {
     try {
@@ -108,6 +109,15 @@ copyOwner2.addEventListener("click", () => {
     } catch(e) {
       notify("There was an error copying the text, please check your clipboard settings.", "error");
     }
+});
+
+copyOwner3.addEventListener("click", () => {
+  try {
+    copyText("Optid2#3981");
+    notify("Copied tag of third owner", "info");
+  } catch(e) {
+    notify("There was an error copying the text, please check your clipboard settings.", "error");
+  }
 });
 
 const fImg = document.querySelector(".favicon");
