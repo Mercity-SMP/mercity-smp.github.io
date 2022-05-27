@@ -124,3 +124,36 @@ const fImg = document.querySelector(".favicon");
 fImg.addEventListener("click", () => {
   window.location.href = "#hero";
 });
+
+const statusPulse = document.querySelector(".status-pulse");
+const statusText = document.querySelector(".status-show");
+
+const ips = {
+  normal: 'testing.mercitysmp.cf',
+  test: 'de1.qloxhost.xyz:25174'
+};
+
+const moreInfoTexts = {
+  port: document.querySelector(".info-port"),
+  version: document.querySelector(".info-version"),
+  playersOn: document.querySelector(".info-players")
+};
+
+fetch(`https://api.mcsrvstat.us/2/${ips.normal}`).then(res => res.json()).then(data => {
+
+  if(data.online) {
+
+    statusPulse.classList.add("online");
+    statusText.textContent = "Online";
+
+    moreInfoTexts.playersOn.textContent = data.players.online;
+    moreInfoTexts.version.textContent = data.version.substring(0, 25) + "..." || data.version;
+    moreInfoTexts.port.textContent = data.port;
+
+  } else {
+    moreInfoTexts.playersOn.textContent = "Server Offline";
+    moreInfoTexts.version.textContent = "Server Offline";
+    moreInfoTexts.port.textContent = "Server Offline";
+  }
+
+});
