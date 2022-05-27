@@ -572,12 +572,9 @@ span.tag {
   background: #00acee;
 }
   
-  .notification:not(.notification.info)::selection {
-    background: var(--accent);
-  }
-  
-  .notification.info::selection {
-    background: var(--accent);
+ .notification::selection {
+  background: var(--accent);
+  color: white;
 }
 
 .cross {
