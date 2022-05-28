@@ -3,18 +3,22 @@
 :root {
   --accent: #161f2d;
   --font: 'Abel';
+  --section-height: 670px;
+  --secondary-accent: #69d4ff;
+  --color-warning: rgb(221, 83, 83);
+  --color-success: #49cc7b;
 }
 
 @font-face {
-    font-family: 'Abel';
-    src: url(/assets/fonts/abel-regular.ttf);
+  font-family: 'Abel';
+  src: url(/assets/fonts/abel-regular.ttf);
 }
 
 /** ESSENTIALS */
 
 *::selection {
- background-color: #a7e6ff;
- color: var(--accent);
+  background-color: var(--secondary-accent);
+  color: var(--accent);
 }
 
 html {
@@ -22,110 +26,133 @@ html {
 }
 
 body {
-    font-family: var(--font);
-    margin: 0;
+  font-family: var(--font);
+  margin: 0;
 }
 
-div, div *, span, h1, h2, h3, h4, h5, h6, abbr, button, button *, p, a {
-    font-family: var(--font);
-    font-weight: 500;
+div,
+div *,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+abbr,
+button,
+button *,
+p,
+a {
+  font-family: var(--font);
+  font-weight: 500;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: bold;
 }
 
 p {
- font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 a {
- color: white;
- text-decoration: underline 2px white;
+  color: white;
+  text-decoration: underline 2px white;
 }
 
 a:hover {
- color: #a7e6ff;
- text-decoration: none;
+  color: var(--secondary-accent);
+  text-decoration: none;
 }
 
 .fa-item {
-    opacity: 0;
-    transform: translateX(-10%);
-    transition: 500ms ease;
-    transition-property: opacity, transform;
+  opacity: 0;
+  transform: translateX(-10%);
+  transition: 500ms ease;
+  transition-property: opacity, transform;
 }
 
 .fa-item.scroll {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .section {
- height: 100vh;
- width: 100vw;
+  height: var(--section-height);
+  width: 100vw;
+  position: absolute;
+  left: 0;
+}
+
+.section:nth-child(2n + 1) {
+  background-color: var(--accent);
 }
 
 h1 {
-    text-align: center;
-    font-size: 3rem;
+  text-align: center;
+  font-size: 3rem;
 }
 
 .section-btns {
-    font-size: 1.2rem;
-    background-color: transparent;
-    padding: .5em 1em;
-    cursor: pointer;
-    transition: 250ms ease;
-    border-radius: .2em;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%) !important;
+  font-size: 1.2rem;
+  background-color: transparent;
+  padding: .5em 1em;
+  cursor: pointer;
+  transition: 250ms ease;
+  border-radius: .2em;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%) !important;
 }
 
 /** Starting Section Styles */
 
 .section__intro {
-    background-color: var(--accent);
-    position: absolute;
-    top: 0;
-    left: 0;
+  top: 0;
 }
 
 .start__header {
-    color: white;
+  color: white;
 }
 
 img.big__portrait {
-    height: 25rem;
-    aspect-ratio: 1;
-    border-radius: 1rem;
-    outline: white solid 2px;
-    outline-offset: .5rem;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) !important;
-    cursor: pointer;
-    transition: 100ms ease;
-    transition-property: filter, outline-offset;
+  height: 25rem;
+  aspect-ratio: 1;
+  border-radius: 1rem;
+  outline: white solid 2px;
+  outline-offset: .5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) !important;
+  cursor: pointer;
+  transition: 100ms ease;
+  transition-property: filter, outline-offset;
 }
 
-img.big__portrait:hover, img.big__portrait:focus {
-    outline-offset: 2px;
-    filter: brightness(1.2);
+img.big__portrait:hover,
+img.big__portrait:focus {
+  outline-offset: 2px;
+  filter: brightness(1.2);
 }
 
 button.text__copyIP {
-    background-color: transparent;
-    border: solid 1px white;
-    color: white;
+  background-color: transparent;
+  border: solid 1px white;
+  color: white;
 }
 
-button.text__copyIP:hover, button.text__copyIP:focus {
-    background-color: white;
-    color: var(--accent);
+button.text__copyIP:hover,
+button.text__copyIP:focus {
+  background-color: white;
+  color: var(--accent);
 }
 
 @media (max-width: 460px) {
@@ -138,44 +165,43 @@ button.text__copyIP:hover, button.text__copyIP:focus {
 /** INFO Section Styles */
 
 .section__info {
-    position: absolute;
-    top: 100vh;
-    left: 0;
+  top: var(--section-height);
 }
 
 .info__header {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 .info__aboutUs {
-    text-align: center;
-    font-size: 125%;
+  text-align: center;
+  font-size: 125%;
 }
 
 .text__joinWL {
-    background-color: transparent;
-    border: solid 1px var(--accent);
-    color: var(--accent);
+  background-color: transparent;
+  border: solid 1px var(--accent);
+  color: var(--accent);
 }
 
-.text__joinWL:hover, .text__joinWL:focus {
-    background-color: var(--accent);
-    color: white;
+.text__joinWL:hover,
+.text__joinWL:focus {
+  background-color: var(--accent);
+  color: white;
 }
 
 .more-text {
- margin-left: 1.5rem;
+  margin-left: 1.5rem;
 }
 
 .owners-list {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .owners-list li {
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-    width: 10rem;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  width: 10rem;
 }
 
 .owner-name:hover span.tag {
@@ -183,64 +209,62 @@ button.text__copyIP:hover, button.text__copyIP:focus {
 }
 
 span.tag {
- color: gray;
+  color: gray;
 }
 
 .copy-owner-tag {
-    cursor: pointer;
-    padding: .2rem .55rem;
-    background-color: transparent;
-    border: solid 1px var(--accent);
-    border-radius: .1rem;
-    transition: 250ms ease;
-    color: var(--accent);
-    transition-property: background-color, color;
+  cursor: pointer;
+  padding: .2rem .55rem;
+  background-color: transparent;
+  border: solid 1px var(--accent);
+  border-radius: .1rem;
+  transition: 250ms ease;
+  color: var(--accent);
+  transition-property: background-color, color;
 }
 
-.copy-owner-tag:hover, .copy-owner-tag:focus {
-    background-color: var(--accent);
-    color: white;
+.copy-owner-tag:hover,
+.copy-owner-tag:focus {
+  background-color: var(--accent);
+  color: white;
 }
 
 .discord-icon {
- border-radius: 50%;
- position: absolute;
- top: 60%;
- transform: translateY(-50%) rotate(15deg);
- right: 10%;
- height: 20rem;
- aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%) rotate(15deg);
+  right: 10%;
+  height: 20rem;
+  aspect-ratio: 1;
 }
 
 .mc-icon {
- border-radius: 50%;
- position: absolute;
- top: 60%;
- transform: translateY(-50%) rotate(-15deg);
- right: calc(10% + calc(20rem / 2));
- height: 20rem;
- aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%) rotate(-15deg);
+  right: calc(10% + calc(20rem / 2));
+  height: 20rem;
+  aspect-ratio: 1;
 }
 
 @media (max-height: 590px) {
-    .imgs {
-        transform: scale(0);
-    }
+  .imgs {
+    transform: scale(0);
+  }
 }
 
 @media (max-width: 1190px) {
-    .imgs {
-        transform: scale(0);
-    }
+  .imgs {
+    transform: scale(0);
+  }
 }
 
 /** Server Status Section Styles */
 
 .section__status {
-  position: absolute;
-  top: 200vh;
-  left: 0;
-  background-color: var(--accent);
+  top: calc(var(--section-height) * 2);
 }
 
 .status__header {
@@ -264,7 +288,7 @@ span.tag {
 .status-box .status-pulse {
   height: 40%;
   aspect-ratio: 1;
-  background-color: rgb(221, 83, 83);
+  background-color: var(--color-warning);
   border-radius: 50%;
   position: absolute;
   left: 50%;
@@ -277,7 +301,7 @@ span.tag {
   height: 125%;
   width: 125%;
   position: absolute;
-  background-color: rgb(221, 83, 83);
+  background-color: var(--color-warning);
   top: -12.5%;
   left: -12.5%;
   z-index: 20;
@@ -286,11 +310,11 @@ span.tag {
 }
 
 .status-box .status-pulse.online {
-  background-color: #49cc7b;
+  background-color: var(--color-success);
 }
 
 .status-box .status-pulse.online .pulse {
-  background-color: #49cc7b;
+  background-color: var(--color-success);
 }
 
 .status-box h2 {
@@ -317,7 +341,7 @@ span.tag {
   50% {
     opacity: 0.5;
   }
-  
+
   100% {
     opacity: 0;
   }
@@ -327,23 +351,23 @@ span.tag {
   0% {
     opacity: 0;
     -webkit-transform: scale3d(.4, .4, .4);
-            transform: scale3d(.4, .4, .4);
+    transform: scale3d(.4, .4, .4);
   }
 
   50% {
     opacity: 0.5;
   }
-  
+
   100% {
     opacity: 0;
   }
 }
 
 .small-link {
- position: absolute;
- bottom: 2%;
- left: 50%;
- transform: translate(-50%);
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .status-show {
@@ -362,8 +386,6 @@ span.tag {
 }
 
 .info {
-  /* position: absolute;
-  left: 1rem; */
   font-size: 1.35rem;
 }
 
@@ -382,15 +404,12 @@ span.tag {
 /** Contact Section Styles */
 
 .section.section__contact {
-  position: absolute;
-  top: 300vh;
-  left: 0;
-  background-color: white;
+  top: calc(var(--section-height) * 3);
 }
 
 .text__contact {
- text-align: center;
- font-size: 1.2rem;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 .contact__flex {
@@ -411,7 +430,7 @@ span.tag {
   width: 75%;
 }
 
-.contact-form .form__name { 
+.contact-form .form__name {
   padding: .75rem;
   font-size: 1.1rem;
   caret-color: var(--accent);
@@ -447,26 +466,23 @@ span.tag {
   box-shadow: inset 0 0 0 0 white;
 }
 
-.contact-form .form__submit:hover, .contact-form .form__submit:focus {
- background-color: white;
- color: var(--accent);
+.contact-form .form__submit:hover,
+.contact-form .form__submit:focus {
+  background-color: white;
+  color: var(--accent);
 }
 
 /** Footer Styles */
 
-.footer {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 400vh;
-  background-color: var(--accent);
+.section__footer {
+  top: calc(var(--section-height) * 4);
 }
 
 .footer__header {
   color: white;
 }
 
-.footer .favicon {
+.section__footer .favicon {
   height: 20%;
   aspect-ratio: 1;
   position: absolute;
@@ -481,7 +497,8 @@ span.tag {
   cursor: pointer;
 }
 
-.footer .favicon:hover, .footer .favicon:focus {
+.section__footer .favicon:hover,
+.section__footer .favicon:focus {
   outline-offset: 2px;
   filter: brightness(1.2);
 }
@@ -563,16 +580,18 @@ span.tag {
 }
 
 #notification-area .notification.success {
-  background: #49cc7b;
+  background: var(--color-success);
 }
+
 #notification-area .notification.error {
-  background: rgb(190, 51, 0);
+  background: var(--color-warning);
 }
+
 #notification-area .notification.info {
-  background: #00acee;
+  background: var(--secondary-accent);
 }
-  
- .notification::selection {
+
+.notification::selection {
   background: var(--accent);
   color: white;
 }
