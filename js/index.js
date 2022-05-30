@@ -80,12 +80,18 @@ copyTextBtn.addEventListener("click", () => {
 
 const clickImage = document.querySelector(".big__portrait");
 clickImage.addEventListener("click", () => {
-    window.location.href = "#aboutServer";
+  window.location.href = "#aboutServer";
 });
 
-const waitListBtn = document.querySelector(".text__joinWL");
+const appealWhiteListBtn = document.querySelector(".text__joinWL");
+
+appealWhiteListBtn.addEventListener("click", () => {
+  window.parent.open("https://dyno.gg/form/d812f962");
+});
+
+const waitListBtn = document.querySelector(".text__knowMore");
 waitListBtn.addEventListener("click", () => {
-    window.parent.open("https://discord.gg/gvbnx3RGR4");
+  window.parent.open("https://discord.gg/gvbnx3RGR4");
 });
 
 

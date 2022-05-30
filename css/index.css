@@ -177,14 +177,31 @@ button.text__copyIP:focus {
   font-size: 125%;
 }
 
-.text__joinWL {
+.btns-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%);
+  gap: .5rem;
+}
+
+.btns-about {
   background-color: transparent;
   border: solid 1px var(--accent);
   color: var(--accent);
+  font-size: 1.2rem;
+  background-color: transparent;
+  padding: .5em 1em;
+  cursor: pointer;
+  transition: 250ms ease;
+  border-radius: .2em;
 }
 
-.text__joinWL:hover,
-.text__joinWL:focus {
+.btns-about:hover,
+.btns-about:focus {
   background-color: var(--accent);
   color: white;
 }
@@ -274,7 +291,7 @@ span.tag {
 .status-box {
   background-color: white;
   height: 65%;
-  aspect-ratio: 1;
+  aspect-ratio: .85;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
