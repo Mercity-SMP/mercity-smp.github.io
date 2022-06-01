@@ -1,0 +1,61 @@
+.section {
+ text-align: center;
+}
+
+.intro-image {
+ height: 50%;
+ aspect-ratio: 1;
+ border-radius: 1rem;
+ outline: white solid 2px;
+ outline-offset: .5rem;
+ cursor: pointer;
+ transition: 100ms ease;
+ transition-property: filter, outline-offset;
+}
+
+.intro-image:hover,
+.intro-image:focus {
+  outline-offset: 2px;
+  filter: brightness(1.2);
+}
+
+.section__header {
+ margin-bottom: 0;
+ font-size: 3.5rem;
+}
+
+.instructions {
+ font-size: 1.75rem;
+ color: white;
+ text-align: center;
+}
+
+.navigation {
+ position: absolute;
+ bottom: 5%;
+ left: 50%;
+ transform: translate(-50%);
+ display: flex;
+ justify-content: center;
+ gap: .5em;
+ width: 50%;
+ height: fit-content;
+ padding: .5em;
+}
+
+.nav-buttons {
+  font-size: 1.2rem;
+  background-color: transparent;
+  padding: .5em 1em;
+  cursor: pointer;
+  transition: 250ms ease;
+  border-radius: .2em;
+  border: solid 1px currentColor;
+  color: white;
+}
+
+.nav-buttons:hover,
+.nav-buttons:focus {
+ background-color: white;
+ color: var(--accent);
+}

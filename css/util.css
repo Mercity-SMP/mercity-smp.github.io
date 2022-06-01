@@ -1,0 +1,120 @@
+/** IMPORTING FONTS */
+
+:root {
+  --accent: #161f2d;
+  --font: 'Abel';
+  --section-height: 670px;
+  --secondary-accent: #69d4ff;
+  --color-warning: rgb(221, 83, 83);
+  --color-success: #49cc7b;
+}
+
+@font-face {
+  font-family: 'Abel';
+  src: url(/assets/fonts/abel-regular.ttf);
+}
+
+/** ESSENTIALS */
+
+*::selection {
+  background-color: var(--secondary-accent);
+  color: var(--accent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  margin: 0;
+}
+
+div,
+div *,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+abbr,
+button,
+button *,
+p,
+a {
+  font-family: var(--font);
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+a {
+  color: white;
+  text-decoration: underline 2px white;
+}
+
+a:hover {
+  color: var(--secondary-accent);
+  text-decoration: none;
+}
+
+.fa-item {
+  opacity: 0;
+  transform: translateX(-10%);
+  transition: 500ms ease;
+  transition-property: opacity, transform;
+}
+
+.fa-item.scroll {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section {
+  height: var(--section-height);
+  width: 100vw;
+  position: absolute;
+  left: 0;
+}
+
+.section:nth-child(2n + 1) {
+  background-color: var(--accent);
+}
+.section:nth-child(2n + 1) > h1 {
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.section-btns {
+  font-size: 1.2rem;
+  background-color: transparent;
+  padding: .5em 1em;
+  cursor: pointer;
+  transition: 250ms ease;
+  border-radius: .2em;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%) !important;
+}
+
+button {
+  outline: none !important;
+}
