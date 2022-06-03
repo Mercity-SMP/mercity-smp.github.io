@@ -14,6 +14,11 @@
   src: url(/assets/fonts/abel-regular.ttf);
 }
 
+@font-face {
+  font-family: 'CodeFont';
+  src: url(/assets/fonts/JetBrainsMono-Regular.ttf);
+}
+
 /** ESSENTIALS */
 
 *::selection {
@@ -93,7 +98,7 @@ a:hover {
 .section:nth-child(2n + 1) {
   background-color: var(--accent);
 }
-.section:nth-child(2n + 1) > h1 {
+.section:nth-child(2n + 1) > h1, .section:nth-child(2n + 1) > p {
   color: white;
 }
 

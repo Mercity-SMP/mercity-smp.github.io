@@ -4,10 +4,6 @@
   top: 0;
 }
 
-.start__header {
-  color: white;
-}
-
 .big__portrait {
   height: 25rem;
   aspect-ratio: 1;
@@ -170,133 +166,6 @@ span.tag {
   top: calc(var(--section-height) * 2);
 }
 
-.status__header {
-  color: white;
-}
-
-/* .status-box {
-  background-color: white;
-  height: 65%;
-  aspect-ratio: .85;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 .5rem white;
-  text-align: center;
-}
-
-.status-box .status-pulse {
-  height: 40%;
-  aspect-ratio: 1;
-  background-color: var(--color-warning);
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  top: 5%;
-  transform: translate(-50%);
-  z-index: 19;
-}
-
-.pulse {
-  height: 125%;
-  width: 125%;
-  position: absolute;
-  background-color: var(--color-warning);
-  top: -12.5%;
-  left: -12.5%;
-  z-index: 20;
-  border-radius: 50%;
-  animation: zoomIn 1250ms ease 0ms infinite forwards;
-}
-
-.status-box .status-pulse.online {
-  background-color: var(--color-success);
-}
-
-.status-box .status-pulse.online .pulse {
-  background-color: var(--color-success);
-}
-
-.status-box h2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.players-online {
-  position: absolute;
-  bottom: 25%;
-  left: 1rem;
-  font-size: 1.3rem;
-}
-
-@-webkit-keyframes zoomIn {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.4, .4, .4);
-    transform: scale3d(.4, .4, .4);
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes zoomIn {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.4, .4, .4);
-    transform: scale3d(.4, .4, .4);
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-.status-show {
-  font-size: 3.2rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.more-info {
-  position: absolute;
-  top: 70%;
-  left: 1rem;
-  text-align: left;
-}
-
-.info {
-  font-size: 1.35rem;
-}
-
-.info-players::before {
-  content: 'Players Online: ';
-}
-
-.info-version::before {
-  content: 'Version: ';
-}
-
-.info-port::before {
-  content: 'Port: ';
-} */
-
 .small-link {
   position: absolute;
   bottom: 2%;
@@ -306,18 +175,110 @@ span.tag {
 
 .htframe {
   position: absolute;
-  top: calc(calc(var(--section-height) * 2) + 55%);
+  top: calc(calc(var(--section-height) * 3) - 300px);
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  height: 80%;
+  height: 500px;
   border-radius: .5rem;
+}
+
+/** More INFO Section Styles */
+
+.section__moreInfo {
+  top: calc(var(--section-height) * 3)
+}
+
+.moreInfo__text {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.advantages-list {
+  font-size: 1.4rem;
+  position: absolute;
+  left: 2rem;
+}
+
+.advantages-list .dark {
+  color: var(--accent);
+  text-decoration: underline 2px;
+}
+
+.advantages-list .dark:hover, .advantages-list .dark:focus {
+  color: var(--secondary-accent);
+  text-decoration: none;
+}
+
+.advantages-list > li::marker {
+  content: '=>  ';
+  font-family: 'CodeFont';
+}
+
+/** FAQ Section Styles */
+
+.section__faq {
+  top: calc(var(--section-height) * 4)
+}
+
+.faq__text {
+  text-align: center;
+}
+
+.accordion-menu {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+}
+
+.accordion-toggle {
+  background-color: white;
+  padding: 1em 2em;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 75%;
+  margin-left: 50%;
+  transform: translate(-50%);
+  position: relative;
+}
+
+.accordion-toggle::after {
+  content: '\f107';
+  font-family: 'Fontawesome';
+  position: absolute;
+  right: 1rem;
+}
+
+.accordion-toggle.active::after {
+  content: '\f106';
+}
+
+.accordion-content {
+  display: none;
+  background-color: #dddddd;
+  padding: 1em 2em;
+  font-size: 1.2rem;
+  margin-left: 50%;
+  transform: translate(-50%);
+  width: 75%;
+}
+
+.accordion-content.active {
+ display: block;
+}
+
+.user-text {
+  color: white;
+  position: absolute;
+  left: 1rem;
+  top: 90%;
 }
 
 /** Contact Section Styles */
 
-.section.section__contact {
-  top: calc(var(--section-height) * 3);
+.section__contact {
+  top: calc(var(--section-height) * 5);
 }
 
 .text__contact {
@@ -388,11 +349,7 @@ span.tag {
 /** Footer Styles */
 
 .section__footer {
-  top: calc(var(--section-height) * 4);
-}
-
-.footer__header {
-  color: white;
+  top: calc(var(--section-height) * 6);
 }
 
 .section__footer .favicon {
@@ -537,4 +494,10 @@ span.tag {
   width: 100%;
   background-color: white;
   transform: rotate(-45deg);
+}
+
+.pu29 {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

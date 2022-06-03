@@ -10,4 +10,4 @@ Minecraft Image: minecraft.net
 
 Icons: fontawesome
 
-Font(s): Fontsquirrel [ Abel ]
+Font(s): Fontsquirrel [ Abel ] [ Jetbrains Mono ]

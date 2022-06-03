@@ -60,9 +60,6 @@ function notify(message, type, context) {
        e.target.parentElement.parentElement.remove();
       });
   }
-  /**
-   * @param {*} text
-   */
   
 function copyText(text) {
     navigator.clipboard.writeText(text);
@@ -129,4 +126,59 @@ copyOwner3.addEventListener("click", () => {
 const fImg = document.querySelector(".favicon");
 fImg.addEventListener("click", () => {
   window.location.href = "#hero";
+});
+
+const toggles = document.querySelectorAll(".accordion-toggle");
+const contents = document.querySelectorAll(".accordion-content");
+
+toggles[0].addEventListener("click", () => {
+
+  for(let i = 0; i < toggles.length; i++) {
+    if(i === 0) continue;
+    toggles[i].classList.remove("active");
+    contents[i].classList.remove("active");
+  }
+
+  toggles[0].classList.toggle("active");
+  contents[0].classList.toggle("active");
+
+});
+
+toggles[1].addEventListener("click", () => {
+
+  for(let i = 0; i < toggles.length; i++) {
+    if(i === 1) continue;
+    toggles[i].classList.remove("active");
+    contents[i].classList.remove("active");
+  }
+
+  toggles[1].classList.toggle("active");
+  contents[1].classList.toggle("active");
+
+});
+
+toggles[2].addEventListener("click", () => {
+
+  for(let i = 0; i < toggles.length; i++) {
+    if(i === 2) continue;
+    toggles[i].classList.remove("active");
+    contents[i].classList.remove("active");
+  }
+
+  toggles[2].classList.toggle("active");
+  contents[2].classList.toggle("active");
+
+});
+
+toggles[3].addEventListener("click", () => {
+
+  for(let i = 0; i < toggles.length; i++) {
+    if(i === 3) continue;
+    toggles[i].classList.remove("active");
+    contents[i].classList.remove("active");
+  }
+
+  toggles[3].classList.toggle("active");
+  contents[3].classList.toggle("active");
+
 });
