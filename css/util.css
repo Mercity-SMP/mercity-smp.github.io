@@ -93,6 +93,7 @@ a:hover {
   width: 100vw;
   position: absolute;
   left: 0;
+  overflow: hidden;
 }
 
 .section:nth-child(2n + 1) {

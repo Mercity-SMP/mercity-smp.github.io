@@ -1,3 +1,8 @@
+.section__header:hover {
+  text-decoration: underline 2px;
+  cursor: pointer;
+}
+
 /** Starting Section Styles */
 
 .section__intro {
@@ -227,7 +232,7 @@ span.tag {
 
 .accordion-menu {
   position: absolute;
-  top: 40%;
+  top: 20%;
   left: 0;
   width: 100%;
 }
@@ -248,31 +253,41 @@ span.tag {
   font-family: 'Fontawesome';
   position: absolute;
   right: 1rem;
+  display:inline-block;
+  transition: transform 250ms ease;
 }
 
 .accordion-toggle.active::after {
-  content: '\f106';
+ transform: rotate(-180deg);
+}
+
+.accordion-toggle::before {
+  content: '\f192  ';
+  font-family: 'Fontawesome';
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.accordion-toggle.active::before {
+  opacity: 1;
+}
+
+h1 {
+ animation: fa-bounce 1500ms ease 0ms infinite alternate;
 }
 
 .accordion-content {
-  display: none;
   background-color: #dddddd;
   padding: 1em 2em;
   font-size: 1.2rem;
   margin-left: 50%;
   transform: translate(-50%);
   width: 75%;
+  display: none;
 }
 
 .accordion-content.active {
- display: block;
-}
-
-.user-text {
-  color: white;
-  position: absolute;
-  left: 1rem;
-  top: 90%;
+  display: block;
 }
 
 /** Contact Section Styles */
@@ -376,7 +391,7 @@ span.tag {
 .footer__text {
   text-align: center;
   color: white;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 1.25rem, 2rem); 
   margin-top: 15rem !important;
   margin: .5rem;
 }

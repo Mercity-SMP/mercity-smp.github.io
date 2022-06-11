@@ -11,3 +11,11 @@ Minecraft Image: minecraft.net
 Icons: fontawesome
 
 Font(s): Fontsquirrel [ Abel ] [ Jetbrains Mono ]
+
+
+
+-----------------------------------------------------------------------
+
+
+VERSION:
+1.32.6

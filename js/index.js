@@ -1,3 +1,15 @@
+const sectionHeaders = document.querySelectorAll(".section__header");
+
+sectionHeaders.forEach(header => {
+
+  header.addEventListener("click", () => {
+
+    window.location.href = `#${header.parentElement.id}`;
+
+  });
+
+});
+
 const fdItems = document.querySelectorAll(".fa-item");
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -131,54 +143,20 @@ fImg.addEventListener("click", () => {
 const toggles = document.querySelectorAll(".accordion-toggle");
 const contents = document.querySelectorAll(".accordion-content");
 
-toggles[0].addEventListener("click", () => {
+for(let i = 0; i < toggles.length; i++) {
 
-  for(let i = 0; i < toggles.length; i++) {
-    if(i === 0) continue;
-    toggles[i].classList.remove("active");
-    contents[i].classList.remove("active");
-  }
+  toggles[i].addEventListener("click", () => {
 
-  toggles[0].classList.toggle("active");
-  contents[0].classList.toggle("active");
+    try {
+      document.querySelector(".accordion-toggle.active")?.classList.remove("active");
+      document.querySelector(".accordion-content.active")?.classList.remove("active");
+    } catch(e) {
+      return;
+    }
 
-});
+    toggles[i].classList.add("active");
+    contents[i].classList.add("active");
 
-toggles[1].addEventListener("click", () => {
+  });
 
-  for(let i = 0; i < toggles.length; i++) {
-    if(i === 1) continue;
-    toggles[i].classList.remove("active");
-    contents[i].classList.remove("active");
-  }
-
-  toggles[1].classList.toggle("active");
-  contents[1].classList.toggle("active");
-
-});
-
-toggles[2].addEventListener("click", () => {
-
-  for(let i = 0; i < toggles.length; i++) {
-    if(i === 2) continue;
-    toggles[i].classList.remove("active");
-    contents[i].classList.remove("active");
-  }
-
-  toggles[2].classList.toggle("active");
-  contents[2].classList.toggle("active");
-
-});
-
-toggles[3].addEventListener("click", () => {
-
-  for(let i = 0; i < toggles.length; i++) {
-    if(i === 3) continue;
-    toggles[i].classList.remove("active");
-    contents[i].classList.remove("active");
-  }
-
-  toggles[3].classList.toggle("active");
-  contents[3].classList.toggle("active");
-
-});
+};
